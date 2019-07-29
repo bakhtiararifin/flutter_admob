@@ -63,8 +63,14 @@ class _MyAppState extends State<MyApp> {
             anchorType: AnchorType.bottom,
           );
 
+        var mediaQuery = MediaQuery.of(context);
+        double paddingBottom = 50.0;
+        if (mediaQuery.orientation == Orientation.landscape) {
+          paddingBottom = 0.0;
+        }
+
         return Padding(
-          padding: const EdgeInsets.only(bottom: 50.0),
+          padding: EdgeInsets.only(bottom: paddingBottom),
           child: child,
         );
       },
