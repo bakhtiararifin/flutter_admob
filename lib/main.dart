@@ -117,7 +117,16 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: () {
+          _incrementCounter();
+
+          myInterstitial
+            ..load()
+            ..show(
+              anchorType: AnchorType.bottom,
+              anchorOffset: 0.0,
+            );
+        },
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ),
